@@ -1,0 +1,41 @@
+name: Make (docker epitest)
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  linux-make:
+    name: Make (Linux epitest docker)
+    runs-on: ubuntu-20.04
+    container: docker://epitechcontent/epitest-docker:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Make
+        shell: bash
+        run: make
+
+  codingstyle:
+    name: Norminette
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: installing pycparser
+        run: python -m pip install pycparser
+      - name: installing coding style
+        run: sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/aureliancnx/Bubulle-Norminette/master/install_bubulle.sh)"
+      - name: check coding style
+        run: bubulle -i O4
+
+  deploy-epitech:
+    name: Deploy (deploy on epitech repo organization)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+        with:
+          source-repo: "git@github.com:MrBartou/my_ftp.git"
+          destination-repo: "git@github.com:EpitechIT2020/B-NWP-400-TLS-4-1-myftp-anthony.denin.git"
