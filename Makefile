@@ -5,26 +5,29 @@
 ## Makefile
 ##
 
-NM_SRC 		= 	src/main.c \
+SRC 		= 	src/main.c \
+				src/help.c \
+				src/init_serv.c \
+				src/client/client.c \
 
 CFLAGS		+=	-W -Wall -I ./include
 
-OBJ_NM		=	$(NM_SRC:.c=.o)
+OBJ		=	$(SRC:.c=.o)
 
-NM_NAME		=	my_ftp
+NAME		=	my_ftp
 
-all:		$(NM_NAME)
+all:		$(NAME)
 
-nm:			$(NM_NAME)
+nm:			$(NAME)
 
-$(NM_NAME): $(OBJ_NM)
-			gcc $(OBJ_NM) -o $(NM_NAME)
+$(NAME): $(OBJ)
+			gcc $(OBJ) -o $(NAME)
 
 clean:
-			rm -f $(OBJ_NM)
+			rm -f $(OBJ)
 
 fclean:		clean
-			rm -f $(NM_NAME)
+			rm -f $(NAME)
 
 re:			fclean all
 
