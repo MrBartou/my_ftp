@@ -7,8 +7,18 @@
 
 SRC 		= 	src/main.c \
 				src/help.c \
-				src/init_serv.c \
+				src/server/init_serv.c \
+				src/server/loop.c \
+				src/cmd/cwd.c \
+				src/cmd/help.c \
+				src/cmd/pass.c \
+				src/cmd/pwd.c \
+				src/cmd/quit.c \
+				src/cmd/user.c \
+				src/cmd/cdup.c \
 				src/client/client.c \
+				src/client/check_command.c \
+				src/lib/my_str_to_word_array.c \
 
 CFLAGS		+=	-W -Wall -I ./include
 

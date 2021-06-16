@@ -12,7 +12,7 @@ int main(int ac, char **av)
     if (ac != 3) {
         if (ac == 2 && strcmp(av[1], "-help") == 0) {
             helper();
-            return(EXIT_SUCCESS);
+            return(EXIT_FAILURE);
         }
         printf("Error with arguments");
         return (84);
