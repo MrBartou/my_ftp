@@ -20,7 +20,7 @@ SRC 		= 	src/main.c \
 				src/client/check_command.c \
 				src/lib/my_str_to_word_array.c \
 
-CFLAGS		+=	-W -Wall -I ./include
+CFLAGS		+= -I ./include
 
 OBJ		=	$(SRC:.c=.o)
 

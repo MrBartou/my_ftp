@@ -26,7 +26,7 @@ void connection(server_t *server)
     char **commands = NULL;
 
     dprintf(server->fd_client, "220 Service ready for new user.\n");
-    while (getline(&line, &len, fd) != MSG_EOF) {
+    while (getline(&line, &len, fd) != EOF) {
         commands = my_str_to_word_array(line);
         found_command(commands, client);
     }
