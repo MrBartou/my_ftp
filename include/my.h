@@ -17,15 +17,14 @@
     #include <sys/types.h>
 
     // POINTER
-    static const char *function[8] = {
+    static const char *function[7] = {
         "HELP",
         "USER",
         "PASS",
         "QUIT",
         "CDUP",
         "CWD",
-        "PWD",
-        NULL
+        "PWD"
     };
 
     // STRUCT
