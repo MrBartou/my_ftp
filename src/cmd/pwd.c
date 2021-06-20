@@ -10,10 +10,9 @@
 void pwd(char **commands, client_t *client)
 {
     (void)commands;
-    char *path = NULL;
+    char *path = malloc(sizeof(*path) * 300);
 
-    path = malloc(sizeof(*path) * 300);
     path = getcwd(path, 300);
-    dprintf(client->fd, "257 \"%s\" created.\t\n", path);
+    dprintf(client->fd, "257 \"%s\" created.\n\t", path);
     free(path);
 }

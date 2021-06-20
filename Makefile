@@ -19,6 +19,7 @@ SRC 		= 	src/main.c \
 				src/client/client.c \
 				src/client/check_command.c \
 				src/lib/my_str_to_word_array.c \
+				src/lib/getline.c \
 
 CFLAGS		+= -I ./include
 

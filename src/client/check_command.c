@@ -14,7 +14,9 @@ void found_command(char **commands, client_t *client)
             void (*function[10])(char **commands, client_t *client) =
             {&help, &user, &pass, &quit, &cdup, &cwd, &pwd};
             (*function[i])(commands, client);
+            return;
         }
     }
+    dprintf(client->fd, "500 Command not found\n\t");
     return;
 }

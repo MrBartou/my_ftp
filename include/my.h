@@ -64,5 +64,6 @@
 
     // lIB
     char **my_str_to_word_array(char *str);
+    char *get_next_line(int fd);
 
 #endif /* !MY_H_ */

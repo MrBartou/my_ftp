@@ -11,6 +11,6 @@ void help(char **commands, client_t *client)
 {
     (void)commands;
     (void)client;
-    dprintf(client->fd, "214 FTP-The following commands are recognized:\
+    dprintf(client->fd, "214 Help message:\
     \n\tUSER\n\tPASS\n\tQUIT\n\tHELP\n\tCDUP\n\tCWD\t\nPWD\t\n");
 }

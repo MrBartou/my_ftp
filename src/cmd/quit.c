@@ -10,6 +10,6 @@
 void quit(char **commands, client_t *client)
 {
     (void)commands;
-    dprintf(client->fd, "221 Service closing control connection.\t\n");
+    dprintf(client->fd, "221 Service closing control connection.\n\t");
     close(client->fd);
 }
