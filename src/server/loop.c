@@ -11,6 +11,7 @@ void loop(server_t *server)
 {
     struct sockaddr_in addr;
 
+    listen(server->fd_serv, 50);
     while (1) {
         server->fd_client = accept(server->fd_serv,
             (struct sockaddr *)&addr, &server->socket);

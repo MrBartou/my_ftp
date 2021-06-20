@@ -23,9 +23,8 @@ void init_serv(char **av)
     server_t *server = malloc(sizeof(*server));
 
     server = init_struct(server, av);
+    printf("%s", "\nServer is connect on 127.0.0.1\n");
     bind(server->fd_serv, (const struct sockaddr *)&server->socket_in,
         sizeof(server->socket_in));
-    listen(server->fd_serv, 50);
-    printf("%s", "\nServer is connect on 127.0.0.1\n");
     loop(server);
 }
