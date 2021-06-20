@@ -10,6 +10,6 @@
 void cwd(char **commands, client_t *client)
 {
     if (commands[1] && chdir(commands[1]) != 1) {
-        dprintf(client->fd, "250 Requested file action okay, completed.\n\t");
+        dprintf(client->fd, "250 Requested file action okay, completed.\r\n");
     }
 }

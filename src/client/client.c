@@ -14,7 +14,7 @@ client_t *create_client(server_t *server)
     new_client->user = NULL;
     new_client->fd = server->fd_client;
     new_client->password = 0;
-    dprintf(server->fd_client, "220 Service ready for new user.\n\t");
+    dprintf(server->fd_client, "220 Service ready for new user.\r\n");
     return (new_client);
 }
 

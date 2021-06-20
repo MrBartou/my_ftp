@@ -11,9 +11,9 @@ void pass(char **commands, client_t *client)
 {
     (void)commands;
     if (client->password == 1)
-        dprintf(client->fd, "230 User logged in, proceed.\n\t");
+        dprintf(client->fd, "230 User logged in, proceed.\r\n");
     else {
         client->password = 1;
-        dprintf(client->fd, "230 User logged in, proceed.\n\t");
+        dprintf(client->fd, "230 User logged in, proceed.\r\n");
     }
 }

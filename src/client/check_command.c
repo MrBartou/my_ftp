@@ -12,11 +12,11 @@ void found_command(char **commands, client_t *client)
     for (int i = 0; function[i] != NULL; i++) {
         if (strcasecmp(commands[0], function[i]) == 0) {
             void (*function[7])(char **commands, client_t *client) =
-            {&help, &user, &pass, &quit, &cdup, &cwd, &pwd};
+                {&help, &user, &pass, &quit, &cdup, &cwd, &pwd};
             (*function[i])(commands, client);
             return;
         }
     }
-    dprintf(client->fd, "500 Command not found\n\t");
+    dprintf(client->fd, "500 Command not found\r\n");
     return;
 }

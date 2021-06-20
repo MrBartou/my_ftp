@@ -12,6 +12,6 @@ void cdup(char **commands, client_t *client)
     (void)commands;
 
     if (chdir("../") != -1) {
-        dprintf(client->fd, "200 Command okay.\n\t");
+        dprintf(client->fd, "200 Command okay.\r\n");
     }
 }
